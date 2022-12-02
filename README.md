@@ -32,9 +32,9 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - The Afro, *May 7, 2022*
 
 ### Data Visualization & Reporting
-[Ethiopia's Forgotten Civil War](https://github.com/JMeltzer92/portfolio/blob/main/pdfs/eth_civ_war_graphics_package.pdf) - *full resolution available here*
+[Ethiopia's Forgotten Civil War](https://github.com/JMeltzer92/portfolio/blob/main/pdfs/eth_civ_war_graphics_package.pdf) - *full resolution available at link*
+- Independent project, *November-December 2022*
 ![Ethiopia graphics package](https://github.com/JMeltzer92/portfolio/blob/main/images/eth_graphpack.png)
-- Independent work, *November-December 2022*
 
 
 ### References
