@@ -15,6 +15,15 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - Tools: R Studio
 
 ### Writing
+#### Features
+**[Scientific Games’ lottery playbook succeeded, then spread](https://cnsmaryland.org/2022/07/01/scientific-games-lottery-playbook-succeeded-then-spread/)**
+- Capital News Service, *July 1, 2022*
+
+**[Baltimore native encourages Black Americans to improve physical and mental health with hiking](https://afro.com/baltimore-native-encourages-black-americans-to-improvephysical-and-mental-health-with-hiking/)**
+- The Afro, *May 7, 2022*
+
+**[Wellness nonprofits come together to promote movement in the Black community and equal usage of Baltimore’s green spaces](https://afro.com/wellness-nonprofits-come-together-to-promote-movement-in-the-black-community-and-equal-usage-of-baltimores-green-spaces/)**
+- The Afro, *May 7, 2022*
 #### Politics
 **[Two Democrats competing in rare open primary to become Maryland’s top accountant and tax collector](https://www.thebaltimorebanner.com/politics-power/state-government/two-democrats-competing-in-rare-open-primary-to-become-marylands-top-accountant-and-tax-collector-OVP2RKH44JF5HHO2XVO5VMHQBM/)**
 - The Baltimore Banner, *July 7, 2022*
@@ -34,13 +43,6 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 
 **[North College Park developments spark mixed reactions](https://streetcarsuburbs.news/north-college-park-developments-spark-mixed-reactions/)**
 - The Hyattsville Life & Times, *June-July 2022*
-
-#### Features
-**[Baltimore native encourages Black Americans to improve physical and mental health with hiking](https://afro.com/baltimore-native-encourages-black-americans-to-improvephysical-and-mental-health-with-hiking/)**
-- The Afro, *May 7, 2022*
-
-**[Wellness nonprofits come together to promote movement in the Black community and equal usage of Baltimore’s green spaces](https://afro.com/wellness-nonprofits-come-together-to-promote-movement-in-the-black-community-and-equal-usage-of-baltimores-green-spaces/)**
-- The Afro, *May 7, 2022*
 
 ### References
 ##### Adam Marton
