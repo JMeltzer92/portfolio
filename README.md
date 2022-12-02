@@ -6,11 +6,13 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 ### Data Visualization & Reporting
 **[Ethiopia's Forgotten Civil War](https://github.com/JMeltzer92/portfolio/blob/main/pdfs/eth_civ_war_graphics_package.pdf)** - *full resolution available at link*
 - Independent project, *November-December 2022*
+- Tools: RawGraphs, Illustrator, XD, InDesign, Python (for data acquisition and analysis - [notebook here](https://github.com/JMeltzer92/portfolio/blob/main/notebooks/eth-ukr-inv_v2.ipynb))
 
 ![Ethiopia graphics package](https://github.com/JMeltzer92/portfolio/blob/main/images/eth_graphpack.png)
 
 **[Wartime violence analysis using ACLED data and R](https://github.com/JMeltzer92/portfolio/blob/main/notebooks/wartime_healthcare_violence.Rmd)**
 - Independent project, *April-May 2022*
+- Tools: R Studio
 
 ### Writing
 #### Politics
