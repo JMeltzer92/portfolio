@@ -1,7 +1,7 @@
 # Jon Meltzer
 ## Portfolio
 
-Welcome to my portfolio repository! Here, you will find examples of published work of which I'm particularly fond and some independent projects that showcase my skillset. You will also find references and a link to a full CV at the bottom. Thanks for looking around!
+Welcome to my portfolio repository! Here, you will find examples of published work of which I'm particularly fond and some independent projects that showcase my skillset. You will also find references and a link to a full CV at the bottom. Thanks for looking around - I hope to work with you soon!
 
 ### Writing
 #### Politics
@@ -34,8 +34,11 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 ### Data Visualization & Reporting
 [Ethiopia's Forgotten Civil War](https://github.com/JMeltzer92/portfolio/blob/main/pdfs/eth_civ_war_graphics_package.pdf) - *full resolution available at link*
 - Independent project, *November-December 2022*
+
 ![Ethiopia graphics package](https://github.com/JMeltzer92/portfolio/blob/main/images/eth_graphpack.png)
 
+[Wartime violence analysis using ACLED data and R]()
+- Independent project, *May 2022*
 
 ### References
 ##### Adam Marton
