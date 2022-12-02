@@ -59,3 +59,6 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - Former News Apps Developer, ProPublica
     - dpwillis@umd.edu
     - (202) 904-1168
+
+### Resume
+![Resume](https://github.com/JMeltzer92/portfolio/blob/main/pdfs/resume_fall22.pdf)
