@@ -32,26 +32,27 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - The Afro, *May 7, 2022*
 
 ### Data Visualization & Reporting
-[Ethiopia's Forgotten Civil War]()
+[Ethiopia's Forgotten Civil War](https://github.com/JMeltzer92/portfolio/blob/main/pdfs/eth_civ_war_graphics_package.pdf) - *full resolution available here*
+![Ethiopia graphics package](https://github.com/JMeltzer92/portfolio/blob/main/images/eth_graphpack.png)
 - Independent work, *November-December 2022*
 
 
 ### References
 ##### Adam Marton
-Director, Capital News Service Digital Bureau
-Former Senior Editor, Data & Graphics, The Baltimore Sun
-amarton@umd.edu
-(301) 405-2413
+- Director, Capital News Service Digital Bureau
+- Former Senior Editor, Data & Graphics, The Baltimore Sun
+    - amarton@umd.edu
+    - (301) 405-2413
 
 ##### John O'Connor
-Politics Editor, The Baltimore Banner
-Former Government Editor, The Baltimore Sun
-john.oconnor@thebaltimorebanner.com
-(803) 240-9108
+- Politics Editor, The Baltimore Banner
+- Former Government Editor, The Baltimore Sun
+    - john.oconnor@thebaltimorebanner.com
+    - (803) 240-9108
 
 ##### Derek Willis
-Lecturer, University of Maryland
-Co-founder, OpenElections
-Former News Apps Developer, ProPublica
-dpwillis@umd.edu
-(202) 904-1168
+- Lecturer, University of Maryland
+- Co-founder, OpenElections
+- Former News Apps Developer, ProPublica
+    - dpwillis@umd.edu
+    - (202) 904-1168
