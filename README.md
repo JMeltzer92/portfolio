@@ -13,6 +13,12 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - Independent project, *April-May 2022*
 - Tools: R Studio
 
+**[Foreign Reporting: The Lives of Our International Neighbors and the Struggles They Left Behind](https://github.com/JMeltzer92/portfolio/blob/main/images/map_graphics)**
+- Capital News Service, *September-December 2022* - maps accompanying each story to center audience on the subject's country of origin
+- Tools: Datawrapper, Adobe Illustrator
+
+![Example maps](https://github.com/JMeltzer92/portfolio/blob/main/images/map_inserts.png)
+
 ## Writing
 ### Features
 **[Scientific Games’ lottery playbook succeeded, then spread](https://cnsmaryland.org/2022/07/01/scientific-games-lottery-playbook-succeeded-then-spread/)**
