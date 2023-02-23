@@ -11,15 +11,13 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - Graphics:
 
   - [Interactive Choropleth Map](https://public.flourish.studio/visualisation/12751897/)
-
   - [Interactive Scatterplot](https://public.flourish.studio/visualisation/12825108/)
-
   - [Interactive Bar Chart](https://public.flourish.studio/visualisation/12826320/)
 
 **[Ethiopia's Forgotten Civil War](https://github.com/JMeltzer92/portfolio/blob/main/pdfs/eth_civ_war_graphics_package.pdf)** - _full resolution available at link_
 
 - Independent project, _November-December 2022_
-- Tools: RawGraphs, Illustrator, XD, InDesign, Python (for data acquisition and analysis - [notebook here](https://github.com/JMeltzer92/portfolio/blob/main/notebooks/eth-ukr-inv_v2.ipynb))
+- Tools: RawGraphs, Illustrator, XD, InDesign, Python (for data acquisition and analysis) - [notebook here](https://github.com/JMeltzer92/portfolio/blob/main/notebooks/eth-ukr-inv_v2.ipynb)
 
 ![Ethiopia graphics package](https://github.com/JMeltzer92/portfolio/blob/main/images/eth_graphpack1.png)
 
@@ -34,6 +32,15 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - Tools: Datawrapper, Adobe Illustrator
 
 ![Example maps](https://github.com/JMeltzer92/portfolio/blob/main/images/map_inserts.png)
+
+**[Meet the people fleeing the United States
+](https://cnsmaryland.org/2023/02/22/meet-the-people-fleeing-the-united-states/)**
+
+- Capital News Service, _February 2023_ - **graphics only**
+- Tools: Datawrapper, R, Microsoft Excel
+- Graphics:
+  - [Interactive Chorpleth Map]() - _embedded in story, direct link to come_
+  - [Interactive Bar Chart](https://public.flourish.studio/visualisation/12823819/)
 
 ## Writing
 
