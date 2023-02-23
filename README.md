@@ -8,7 +8,13 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 
 - Capital News Service, _February 2023_
 - Tools: R, Flourish - [notebook here](https://github.com/JMeltzer92/portfolio/blob/main/notebooks/cit-data.rmd)
-- Graphics: -[Interactive Choropleth Map](https://public.flourish.studio/visualisation/12751897/) -[Interactive Scatterplot](https://public.flourish.studio/visualisation/12825108/) -[Interactive Bar Chart](https://public.flourish.studio/visualisation/12826320/)
+- Graphics:
+
+  - [Interactive Choropleth Map](https://public.flourish.studio/visualisation/12751897/)
+
+  - [Interactive Scatterplot](https://public.flourish.studio/visualisation/12825108/)
+
+  - [Interactive Bar Chart](https://public.flourish.studio/visualisation/12826320/)
 
 **[Ethiopia's Forgotten Civil War](https://github.com/JMeltzer92/portfolio/blob/main/pdfs/eth_civ_war_graphics_package.pdf)** - _full resolution available at link_
 
