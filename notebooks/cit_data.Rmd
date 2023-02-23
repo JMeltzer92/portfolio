@@ -1,0 +1,473 @@
+---
+title: "Baltimore Environmental Citations"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load libraries
+
+```{r}
+library(readxl)
+library(lubridate)
+library(janitor)
+library(tidyverse)
+library(ggplot2)
+```
+
+## Load in data
+
+```{r}
+env_cit <- read_csv('data/Environmental_Citations.csv')
+```
+
+## Clean names
+
+```{r}
+env_cit <- env_cit %>% 
+  clean_names()
+```
+
+## Citation neighborhoods -> CSAs
+
+```{r}
+crosswalk <- read_excel('data/CSA-to-NSA-2010.xlsx') %>% 
+  rename(neighborhood = NSA2010)
+
+env_cit <- env_cit %>% 
+  left_join(crosswalk, by = 'neighborhood') %>% 
+  select(-neighborhood) %>% 
+  rename(neighborhood = CSA2010) %>% 
+  select(neighborhood, everything())
+```
+
+## Fix dates & select relevant columns
+
+```{r}
+env_cit <- env_cit %>% 
+  mutate(
+    violation_date = str_sub(violation_date, start=1L, end=10L),
+    violation_date = as_datetime(violation_date)
+  ) %>% 
+  select(violation_date,agency:balance,violation_location,neighborhood:location)
+```
+
+## Filter to 2012 onwards & group by year
+
+```{r}
+env_cit_new <- env_cit %>% 
+  filter(
+    violation_date >= '2012-01-01'
+  ) %>% 
+  mutate(
+    year=case_when(
+      violation_date >= '2012-01-01' & violation_date < '2013-01-01' ~ '2012',
+      violation_date >= '2013-01-01' & violation_date < '2014-01-01' ~ '2013',
+      violation_date >= '2014-01-01' & violation_date < '2015-01-01' ~ '2014',
+      violation_date >= '2015-01-01' & violation_date < '2016-01-01' ~ '2015',
+      violation_date >= '2016-01-01' & violation_date < '2017-01-01' ~ '2016',
+      violation_date >= '2017-01-01' & violation_date < '2018-01-01' ~ '2017',
+      violation_date >= '2018-01-01' & violation_date < '2019-01-01' ~ '2018',
+      violation_date >= '2019-01-01' & violation_date < '2020-01-01' ~ '2019',
+      violation_date >= '2020-01-01' & violation_date < '2021-01-01' ~ '2020',
+      violation_date >= '2021-01-01' & violation_date < '2022-01-01' ~ '2021',
+      violation_date >= '2022-01-01' & violation_date < '2023-01-01' ~ '2022',
+      violation_date >= '2023-01-01' ~ '2023'
+    )
+  )
+
+env_cit_by_year <- env_cit_new %>% 
+  group_by(year) %>% 
+  summarize(count_citations=n())
+```
+
+## Group by issuing department
+
+```{r}
+env_cit_by_agency <- env_cit_new %>% 
+  group_by(agency) %>% 
+  summarize(count_citations=n())
+```
+
+## Group by description
+
+```{r}
+env_cit_by_desc <- env_cit_new %>% 
+  group_by(description) %>% 
+  summarize(count_citations=n()) %>% 
+  filter(count_citations > 100) %>% 
+  arrange(desc(count_citations))
+```
+
+## Where are trash accumulation and high grass & weeds tickets issued?
+
+```{r}
+high_grass <- env_cit_new %>%
+  filter(description=='HIGH GRASS AND WEEDS') %>% 
+  group_by(neighborhood) %>% 
+  summarise(count_citations=n()) %>% 
+  arrange(desc(count_citations))
+```
+
+## Read in Demographics
+
+```{r}
+demos <- read_csv('data/2020-demos-bmore.csv') %>%
+  clean_names() %>% 
+  select(-c(total_male_population,total_female_population)) %>% 
+  mutate(across(is.numeric,~round(., digits=1))) %>% 
+  rename(neighborhood = csa2010)
+
+# Fix neighborhood names
+# demos <- demos %>% 
+#   mutate(neighborhood = case_when(
+#     neighborhood == "Orangeville/East Highlandtown" ~ "Greektown/Bayview",
+#     neighborhood == "Harford/Echodale" ~ "Hamilton Hills",
+#     neighborhood == "Medfield/Hampden/Remington/Woodberry" ~ "Hampden/Remington",
+#     neighborhood == "Lauraville" ~ "Greater Lauraville",
+#     neighborhood == "Greenmount East" ~ "Oliver/Johnson Square",
+#     neighborhood == "Claremont/Armistead" ~ "Orchard Ridge/Armistead",
+#     neighborhood == "Washington Village/Pigtown" ~ "Pigtown/Carroll Park",
+#     TRUE ~ neighborhood
+#   ))
+
+demos[38, 'neighborhood'] <- "Mt. Washington/Coldspring"
+demos[1, 'neighborhood'] <- "Allendale/Irvington/South Hilton"
+demos[18, 'neighborhood'] <- "Glen-Falstaff"
+demos[55, 'neighborhood'] <- "Westport/Mt. Winans/Lakeland"
+```
+
+## Join datasets
+
+```{r}
+env_cit_demos <- left_join(env_cit_new, demos, by='neighborhood')
+```
+
+## Citations by neighborhood with demos
+
+```{r}
+cit_by_race_csa <- env_cit_demos %>% 
+  group_by(neighborhood,total_population,percent_of_residents_black_african_american_non_hispanic,percent_of_residents_white_caucasian_non_hispanic,percent_of_residents_asian_non_hispanic,percent_of_residents_two_or_more_races_non_hispanic,percent_of_residents_hispanic,median_household_income) %>% 
+  summarize(count_cit=n()) %>% 
+  mutate(cit_per_capita = round((count_cit/total_population),digits=2)) %>% 
+  arrange(desc(cit_per_capita))
+
+csa_export <- cit_by_race_csa %>% 
+  rename(
+    black = percent_of_residents_black_african_american_non_hispanic,
+    white = percent_of_residents_white_caucasian_non_hispanic,
+    asian = percent_of_residents_asian_non_hispanic,
+    mixed = percent_of_residents_two_or_more_races_non_hispanic,
+    hispanic = percent_of_residents_hispanic
+  ) %>% 
+  write_csv("data/csa_cit_data.csv")
+```
+# Neighborhood Analysis
+
+```{r}
+start_date <- as_date('2012-01-01')
+end_date <- as_date('2023-01-01')
+
+int <- interval(start_date,end_date)
+
+month_seq = seq(start_date, end_date, by='month')
+```
+
+## Clifton-Berea
+
+```{r}
+clifton_berea <- env_cit_demos %>% 
+  filter(neighborhood == 'Clifton-Berea')
+
+clifton_berea_by_desc <- clifton_berea %>% 
+  group_by(description) %>% 
+  summarise(count=n())
+
+clifton_berea_over_time <- clifton_berea %>% 
+  group_by(month=floor_date(violation_date,'month')) %>% 
+  summarise(clifton_count=n())
+
+ggplot(data = clifton_berea_over_time) +
+  geom_area(mapping = aes(x = month, y = clifton_count))
+```
+
+## Midway/Coldstream
+
+```{r}
+midway_coldstream <- env_cit_demos %>% 
+  filter(neighborhood == 'Midway/Coldstream')
+
+midway_coldstream_by_desc <- midway_coldstream %>% 
+  group_by(description) %>% 
+  summarise(count=n())
+
+midway_coldstream_over_time <- midway_coldstream %>% 
+  group_by(month=floor_date(violation_date,'month')) %>% 
+  summarise(midway_count=n())
+
+ggplot(data = midway_coldstream_over_time) +
+  geom_area(mapping = aes(x = month, y = midway_count))
+```
+
+## Belair-Edison
+
+```{r}
+belair_edison <- env_cit_demos %>% 
+  filter(neighborhood == 'Belair-Edison')
+
+belair_edison_by_desc <- belair_edison %>% 
+  group_by(description) %>% 
+  summarise(count=n())
+
+belair_edison_over_time <- belair_edison %>% 
+  group_by(month=floor_date(violation_date,'month')) %>% 
+  summarise(belair_count=n())
+
+ggplot(data = belair_edison_over_time) +
+  geom_area(mapping = aes(x = month, y = belair_count))
+```
+
+## Madison/East End
+
+```{r}
+madison_east_end <- env_cit_demos %>% 
+  filter(neighborhood == 'Madison/East End')
+
+madison_east_end_by_desc <- madison_east_end %>% 
+  group_by(description) %>% 
+  summarise(count=n())
+
+madison_east_end_over_time <- madison_east_end %>% 
+  group_by(month=floor_date(violation_date,'month')) %>% 
+  summarise(madison_count=n())
+
+ggplot(data = madison_east_end_over_time) +
+  geom_area(mapping = aes(x = month, y = madison_count))
+```
+
+## Southwest Baltimore
+
+```{r}
+sw_bmore <- env_cit_demos %>% 
+  filter(neighborhood == 'Southwest Baltimore')
+
+sw_bmore_by_desc <- sw_bmore %>% 
+  group_by(description) %>% 
+  summarise(count=n())
+
+sw_bmore_over_time <- sw_bmore %>% 
+  group_by(month=floor_date(violation_date,'month')) %>% 
+  summarise(sw_count=n())
+ggplot(data = sw_bmore_over_time) +
+  geom_area(mapping = aes(x = month, y = sw_count))
+```
+
+## South Baltimore
+
+```{r}
+s_bmore <- env_cit_demos %>% 
+  filter(neighborhood == 'South Baltimore')
+
+s_bmore_by_desc <- s_bmore %>% 
+  group_by(description) %>% 
+  summarise(count=n())
+
+s_bmore_over_time <- s_bmore %>% 
+  group_by(month=floor_date(violation_date,'month')) %>% 
+  summarise(s_count=n())
+
+ggplot(data = s_bmore_over_time) +
+  geom_area(mapping = aes(x = month, y = s_count))
+```
+
+## Canton
+
+```{r}
+canton <- env_cit_demos %>% 
+  filter(neighborhood == 'Canton')
+
+canton_by_desc <- canton %>% 
+  group_by(description) %>% 
+  summarise(count=n())
+
+canton_over_time <- canton %>% 
+  group_by(month=floor_date(violation_date,'month')) %>% 
+  summarise(canton_count=n())
+
+ggplot(data = canton_over_time) +
+  geom_area(mapping = aes(x = month, y = canton_count))
+```
+
+## Greater Roland Park/Poplar Hill
+
+```{r}
+roland_park <- env_cit_demos %>% 
+  filter(neighborhood == 'Greater Roland Park/Poplar Hill')
+
+roland_park_by_desc <- roland_park %>% 
+  group_by(description) %>% 
+  summarise(count=n())
+
+roland_park_over_time <- roland_park %>% 
+  group_by(month=floor_date(violation_date,'month')) %>% 
+  summarise(roland_park_count=n())
+
+ggplot(data = roland_park_over_time) +
+  geom_area(mapping = aes(x = month, y = roland_park_count))
+```
+
+## Inner Harbor/Federal Hill
+
+```{r}
+inner_harbor <- env_cit_demos %>% 
+  filter(neighborhood == 'Inner Harbor/Federal Hill')
+
+inner_harbor_by_desc <- inner_harbor %>% 
+  group_by(description) %>% 
+  summarise(count=n())
+
+inner_harbor_over_time <- inner_harbor %>% 
+  group_by(month=floor_date(violation_date,'month')) %>% 
+  summarise(inner_harbor_count=n())
+
+ggplot(data = inner_harbor_over_time) +
+  geom_area(mapping = aes(x = month, y = inner_harbor_count))
+```
+
+## Medfield/Hampden/Woodberry/Remington
+
+```{r}
+mhwr <- env_cit_demos %>% 
+  filter(neighborhood == 'Medfield/Hampden/Woodberry/Remington')
+
+mhwr_by_desc <- mhwr %>% 
+  group_by(description) %>% 
+  summarise(count=n())
+
+mhwr_over_time <- mhwr %>% 
+  group_by(month=floor_date(violation_date,'month')) %>% 
+  summarise(mhwr_count=n())
+
+ggplot(data = mhwr_over_time) +
+  geom_area(mapping = aes(x = month, y = mhwr_count))
+```
+
+## Comparative graph - most cited vs. whitest
+
+```{r}
+month_seq = seq(start_date, end_date, by='month')
+
+ten_over_time <- data.frame('month' = month_seq) %>% 
+  left_join(clifton_berea_over_time,by = 'month') %>% 
+  left_join(midway_coldstream_over_time,by = 'month') %>% 
+  left_join(belair_edison_over_time,by = 'month') %>% 
+  left_join(madison_east_end_over_time,by = 'month') %>% 
+  left_join(sw_bmore_over_time,by = 'month') %>% 
+  left_join(s_bmore_over_time,by = 'month') %>% 
+  left_join(canton_over_time,by = 'month') %>% 
+  left_join(roland_park_over_time,by = 'month') %>% 
+  left_join(inner_harbor_over_time,by = 'month') %>% 
+  left_join(mhwr_over_time,by = 'month')
+
+ten_over_time[is.na(ten_over_time)] = 0
+
+ggplot(data = ten_over_time, aes(x = month)) +
+  geom_line(aes(y=clifton_count,color='Majority Black')) +
+  geom_line(aes(y=midway_count,color='Majority Black')) +
+  geom_line(aes(y=belair_count,color='Majority Black')) +
+  geom_line(aes(y=madison_count,color='Majority Black')) +
+  geom_line(aes(y=sw_count,color='Majority Black')) +
+  geom_line(aes(y=s_count,color='Majority white')) +
+  geom_line(aes(y=canton_count,color='Majority white')) +
+  geom_line(aes(y=roland_park_count,color='Majority white')) +
+  geom_line(aes(y=inner_harbor_count,color='Majority white')) +
+  geom_line(aes(y=mhwr_count,color='Majority white')) +
+  labs(x = 'month', y = 'citations issued', title = str_wrap('Majority Black neighborhoods received far more environmental citations over the past ten years than majority white neighborhoods.', 70), color = 'Neighborhood type')
+  
+```
+
+## Scatterplot - Median income vs. citations per capita
+
+```{r}
+ggplot(data = cit_by_race_csa) +
+  geom_point(aes(x = median_household_income, y = cit_per_capita, color = percent_of_residents_black_african_american_non_hispanic, size = count_cit)) +
+  geom_smooth(method = lm,aes(x = median_household_income, y = cit_per_capita)) +
+  labs(x = 'Median household income', y = 'Environmental citations issued per capita', title = str_wrap('Poorer neighborhoods receive more citations per capita than richer neighborhoods.', 70), color = 'Percent of residents who are Black', size = 'Total citations issued since 2012')
+```
+
+## Most cited addresses
+
+```{r}
+cit_by_add <- env_cit_new %>% 
+  group_by(violation_location) %>% 
+  summarise(count_cit=n()) %>% 
+  arrange(desc(count_cit))
+```
+
+
+## High cit count addresses
+
+```{r}
+top_adds <- cit_by_add %>% 
+  filter(
+    str_detect(violation_location,"^[0-9][0-9][0-9][0-9]") &
+    !str_detect(violation_location, "^0000")
+  ) %>% 
+  head(5)
+
+top_adds
+```
+
+#Vacant housing
+
+```{r}
+vacant_housing <- env_cit_demos %>% 
+  filter(description == "FAILURE TO FILE ANNUAL VACANT BUILDING REGISTRATION") %>%
+  group_by(neighborhood) %>% 
+  summarise(count = n())
+```
+
+# Export csa
+```{r}
+cit_by_race_csa <- cit_by_race_csa %>% 
+  mutate(
+    neighborhood = case_when(
+      neighborhood == "Orangeville/East Highlandtown" ~ "Greektown/Bayview",
+      neighborhood == "Harford/Echodale" ~ "Hamilton Hills",
+      neighborhood == "Medfield/Hampden/Remington/Woodberry" ~ "Hampden/Remington",
+      neighborhood == "Lauraville" ~ "Greater Lauraville",
+      neighborhood == "Greenmount East" ~ "Oliver/Johnson Square",
+      neighborhood == "Claremont/Armistead" ~ "Orchard Ridge/Armistead",
+      neighborhood == "Washington Village/Pigtown" ~ "Pigtown/Carroll Park",
+      TRUE ~ neighborhood
+  )) %>% 
+  filter(!is.na(neighborhood)) %>% 
+  mutate(majority_black = case_when(
+    percent_of_residents_black_african_american_non_hispanic > 50 ~ "Yes",
+    TRUE ~ "No"
+  ))
+
+write_csv(cit_by_race_csa, path = "data/csa_cit_data_fixed.csv")
+```
+
+# Total cost of cits by neighborhood
+```{r}
+cost_by_hood <- env_cit_demos %>% 
+  mutate(majority_black = case_when(
+    percent_of_residents_black_african_american_non_hispanic > 50 ~ "Yes",
+    TRUE ~ "No"
+  )) %>% 
+  filter(violation_date >= '2022-01-01' & violation_date < '2023-01-01' & !is.na(neighborhood)) %>% 
+  group_by(neighborhood,majority_black,median_household_income) %>%
+  summarise(
+    total_cost = sum(fine_amount)
+  ) %>% 
+  arrange(desc(total_cost))
+
+cost_by_hood <- cost_by_hood[(1:15),]
+
+write_csv(cost_by_hood, path="data/cost_by_hood.csv")
+```
+
