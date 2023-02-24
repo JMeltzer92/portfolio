@@ -17,7 +17,7 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 **[Ethiopia's Forgotten Civil War](https://github.com/JMeltzer92/portfolio/blob/main/pdfs/eth_civ_war_graphics_package.pdf)** - _full resolution available at link_
 
 - Independent project, _November-December 2022_
-- Tools: RawGraphs, Illustrator, XD, InDesign, Python (for data acquisition and analysis) - [notebook here](https://github.com/JMeltzer92/portfolio/blob/main/notebooks/eth-ukr-inv_v2.ipynb)
+- Tools: RawGraphs, Illustrator, XD, InDesign, Python/pandas (for data acquisition and analysis) - [notebook here](https://github.com/JMeltzer92/portfolio/blob/main/notebooks/eth-ukr-inv_v2.ipynb)
 
 ![Ethiopia graphics package](https://github.com/JMeltzer92/portfolio/blob/main/images/eth_graphpack1.png)
 
