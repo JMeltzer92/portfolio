@@ -15,100 +15,61 @@ library(lubridate)
 library(janitor)
 library(tidyverse)
 library(ggplot2)
+library(sf)
 ```
 
 ## Load in data
 
 ```{r}
-env_cit <- read_csv('data/Environmental_Citations.csv')
+citations <- read_csv('data/Environmental_Citations.csv')
 ```
 
 ## Clean names
 
 ```{r}
-env_cit <- env_cit %>% 
+citations <- citations %>% 
   clean_names()
 ```
 
-## Citation neighborhoods -> CSAs
+## Clean, go from citation neighborhoods -> CSAs
 
 ```{r}
-crosswalk <- read_excel('data/CSA-to-NSA-2010.xlsx') %>% 
-  rename(neighborhood = NSA2010)
+citations_geo <- citations %>%
+  separate(violation_date, c("violation_date", "violation_time"), " ") %>%
+  mutate(violation_date = ymd(violation_date),
+         violation_year = year(violation_date),
+         violation_month = month(violation_date),
+         violation_day = day(violation_date),
+         location = gsub("\\(", "", location),
+         location = gsub("\\)", "", location)) %>%
+  separate(location, c("lat", "lon"), ",") %>% 
+  filter(!is.na(block)) %>%
+  filter(!is.na(lon)) %>%
+  st_as_sf(coords = c("lon", "lat"),
+           crs = 4326)
 
-env_cit <- env_cit %>% 
-  left_join(crosswalk, by = 'neighborhood') %>% 
-  select(-neighborhood) %>% 
-  rename(neighborhood = CSA2010) %>% 
-  select(neighborhood, everything())
+citations_invalid <- citations %>%
+  mutate(location = gsub("\\(", "", location),
+         location = gsub("\\)", "", location)) %>% 
+  separate(location, c("lat", "lon"), ",") %>% 
+  filter(is.na(block) | is.na(lon))
+
+csas <- read_sf("data/Community_Statistical_Areas_(2020)/Community_Statistical_Areas__2020_.shp") %>%
+  st_transform(crs = 4326) %>%
+  clean_names()
+
+# citations_by_csas <- st_intersection(geocoded_citations,csas)
+# write_sf(citations_by_csas, "data/geocoded-citations-by-csa.csv")
+
+env_cit <- read_sf("data/geocoded-citations-by-csa.csv") %>%
+  clean_names()
 ```
 
-## Fix dates & select relevant columns
-
-```{r}
-env_cit <- env_cit %>% 
-  mutate(
-    violation_date = str_sub(violation_date, start=1L, end=10L),
-    violation_date = as_datetime(violation_date)
-  ) %>% 
-  select(violation_date,agency:balance,violation_location,neighborhood:location)
-```
-
-## Filter to 2012 onwards & group by year
+## Filter to 2015 onwards
 
 ```{r}
 env_cit_new <- env_cit %>% 
-  filter(
-    violation_date >= '2012-01-01'
-  ) %>% 
-  mutate(
-    year=case_when(
-      violation_date >= '2012-01-01' & violation_date < '2013-01-01' ~ '2012',
-      violation_date >= '2013-01-01' & violation_date < '2014-01-01' ~ '2013',
-      violation_date >= '2014-01-01' & violation_date < '2015-01-01' ~ '2014',
-      violation_date >= '2015-01-01' & violation_date < '2016-01-01' ~ '2015',
-      violation_date >= '2016-01-01' & violation_date < '2017-01-01' ~ '2016',
-      violation_date >= '2017-01-01' & violation_date < '2018-01-01' ~ '2017',
-      violation_date >= '2018-01-01' & violation_date < '2019-01-01' ~ '2018',
-      violation_date >= '2019-01-01' & violation_date < '2020-01-01' ~ '2019',
-      violation_date >= '2020-01-01' & violation_date < '2021-01-01' ~ '2020',
-      violation_date >= '2021-01-01' & violation_date < '2022-01-01' ~ '2021',
-      violation_date >= '2022-01-01' & violation_date < '2023-01-01' ~ '2022',
-      violation_date >= '2023-01-01' ~ '2023'
-    )
-  )
-
-env_cit_by_year <- env_cit_new %>% 
-  group_by(year) %>% 
-  summarize(count_citations=n())
-```
-
-## Group by issuing department
-
-```{r}
-env_cit_by_agency <- env_cit_new %>% 
-  group_by(agency) %>% 
-  summarize(count_citations=n())
-```
-
-## Group by description
-
-```{r}
-env_cit_by_desc <- env_cit_new %>% 
-  group_by(description) %>% 
-  summarize(count_citations=n()) %>% 
-  filter(count_citations > 100) %>% 
-  arrange(desc(count_citations))
-```
-
-## Where are trash accumulation and high grass & weeds tickets issued?
-
-```{r}
-high_grass <- env_cit_new %>%
-  filter(description=='HIGH GRASS AND WEEDS') %>% 
-  group_by(neighborhood) %>% 
-  summarise(count_citations=n()) %>% 
-  arrange(desc(count_citations))
+  filter(violation_year >= 2012)
 ```
 
 ## Read in Demographics
@@ -118,38 +79,20 @@ demos <- read_csv('data/2020-demos-bmore.csv') %>%
   clean_names() %>% 
   select(-c(total_male_population,total_female_population)) %>% 
   mutate(across(is.numeric,~round(., digits=1))) %>% 
-  rename(neighborhood = csa2010)
-
-# Fix neighborhood names
-# demos <- demos %>% 
-#   mutate(neighborhood = case_when(
-#     neighborhood == "Orangeville/East Highlandtown" ~ "Greektown/Bayview",
-#     neighborhood == "Harford/Echodale" ~ "Hamilton Hills",
-#     neighborhood == "Medfield/Hampden/Remington/Woodberry" ~ "Hampden/Remington",
-#     neighborhood == "Lauraville" ~ "Greater Lauraville",
-#     neighborhood == "Greenmount East" ~ "Oliver/Johnson Square",
-#     neighborhood == "Claremont/Armistead" ~ "Orchard Ridge/Armistead",
-#     neighborhood == "Washington Village/Pigtown" ~ "Pigtown/Carroll Park",
-#     TRUE ~ neighborhood
-#   ))
-
-demos[38, 'neighborhood'] <- "Mt. Washington/Coldspring"
-demos[1, 'neighborhood'] <- "Allendale/Irvington/South Hilton"
-demos[18, 'neighborhood'] <- "Glen-Falstaff"
-demos[55, 'neighborhood'] <- "Westport/Mt. Winans/Lakeland"
+  rename(csa2020 = csa2010)
 ```
 
 ## Join datasets
 
 ```{r}
-env_cit_demos <- left_join(env_cit_new, demos, by='neighborhood')
+env_cit_demos <- left_join(env_cit_new, demos, by='csa2020')
 ```
 
 ## Citations by neighborhood with demos
 
 ```{r}
 cit_by_race_csa <- env_cit_demos %>% 
-  group_by(neighborhood,total_population,percent_of_residents_black_african_american_non_hispanic,percent_of_residents_white_caucasian_non_hispanic,percent_of_residents_asian_non_hispanic,percent_of_residents_two_or_more_races_non_hispanic,percent_of_residents_hispanic,median_household_income) %>% 
+  group_by(csa2020,total_population,percent_of_residents_black_african_american_non_hispanic,percent_of_residents_white_caucasian_non_hispanic,percent_of_residents_asian_non_hispanic,percent_of_residents_two_or_more_races_non_hispanic,percent_of_residents_hispanic,median_household_income) %>% 
   summarize(count_cit=n()) %>% 
   mutate(cit_per_capita = round((count_cit/total_population),digits=2)) %>% 
   arrange(desc(cit_per_capita))
@@ -164,6 +107,7 @@ csa_export <- cit_by_race_csa %>%
   ) %>% 
   write_csv("data/csa_cit_data.csv")
 ```
+
 # Neighborhood Analysis
 
 ```{r}
@@ -432,18 +376,6 @@ vacant_housing <- env_cit_demos %>%
 # Export csa
 ```{r}
 cit_by_race_csa <- cit_by_race_csa %>% 
-  mutate(
-    neighborhood = case_when(
-      neighborhood == "Orangeville/East Highlandtown" ~ "Greektown/Bayview",
-      neighborhood == "Harford/Echodale" ~ "Hamilton Hills",
-      neighborhood == "Medfield/Hampden/Remington/Woodberry" ~ "Hampden/Remington",
-      neighborhood == "Lauraville" ~ "Greater Lauraville",
-      neighborhood == "Greenmount East" ~ "Oliver/Johnson Square",
-      neighborhood == "Claremont/Armistead" ~ "Orchard Ridge/Armistead",
-      neighborhood == "Washington Village/Pigtown" ~ "Pigtown/Carroll Park",
-      TRUE ~ neighborhood
-  )) %>% 
-  filter(!is.na(neighborhood)) %>% 
   mutate(majority_black = case_when(
     percent_of_residents_black_african_american_non_hispanic > 50 ~ "Yes",
     TRUE ~ "No"
@@ -453,14 +385,16 @@ write_csv(cit_by_race_csa, path = "data/csa_cit_data_fixed.csv")
 ```
 
 # Total cost of cits by neighborhood
+
 ```{r}
 cost_by_hood <- env_cit_demos %>% 
   mutate(majority_black = case_when(
     percent_of_residents_black_african_american_non_hispanic > 50 ~ "Yes",
     TRUE ~ "No"
   )) %>% 
-  filter(violation_date >= '2022-01-01' & violation_date < '2023-01-01' & !is.na(neighborhood)) %>% 
-  group_by(neighborhood,majority_black,median_household_income) %>%
+  filter(violation_year == 2022) %>% 
+  group_by(csa2020,majority_black,median_household_income) %>%
+  mutate(fine_amount = as.numeric(fine_amount)) %>% 
   summarise(
     total_cost = sum(fine_amount)
   ) %>% 
@@ -468,6 +402,16 @@ cost_by_hood <- env_cit_demos %>%
 
 cost_by_hood <- cost_by_hood[(1:15),]
 
-write_csv(cost_by_hood, path="data/cost_by_hood.csv")
+write_csv(cost_by_hood, file="data/cost_by_hood.csv")
+```
+
+## Vacant housing
+
+```{r}
+housing <- env_cit_new %>%
+  filter(description == "FAILURE TO FILE ANNUAL VACANT BUILDING REGISTRATION") %>% 
+  group_by(csa2020) %>% 
+  summarise(count = n()) %>% 
+  arrange(count)
 ```
 

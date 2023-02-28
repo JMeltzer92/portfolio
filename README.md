@@ -7,7 +7,7 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 **[Baltimore’s Black communities get more environmental citations – but no support, say activists](https://cnsmaryland.org/2023/02/23/baltimores-black-communities-get-more-environmental-citations-but-no-support-say-activists/)**
 
 - Capital News Service, _February 2023_
-- Tools: R, Flourish - [notebook here](https://github.com/JMeltzer92/portfolio/blob/main/notebooks/cit-data.rmd)
+- Tools: R, Flourish - [notebook here](https://github.com/JMeltzer92/portfolio/blob/main/notebooks/cit_data_v2.rmd)
 - Graphics:
 
   - [Interactive Choropleth Map](https://public.flourish.studio/visualisation/12751897/)
