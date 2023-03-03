@@ -4,15 +4,17 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 
 ## Data Visualization & Reporting
 
-**[Baltimore’s Black communities get more environmental citations – but no support, say activists](https://cnsmaryland.org/2023/02/23/baltimores-black-communities-get-more-environmental-citations-but-no-support-say-activists/)**
+**[Baltimore’s Black communities get more environmental citations – but no support, say activists](https://www.thebaltimorebanner.com/politics-power/local-government/baltimore-black-communities-environmental-citations-MP2ERJH6PVFHHHH4JNCBX4ZXKI/)**
 
 - Capital News Service, _February 2023_
 - Tools: R, Flourish - [notebook here](https://github.com/JMeltzer92/portfolio/blob/main/notebooks/cit_data_v2.rmd)
 - Graphics:
 
-  - [Interactive Choropleth Map](https://public.flourish.studio/visualisation/12751897/)
-  - [Interactive Scatterplot](https://public.flourish.studio/visualisation/12825108/)
-  - [Interactive Bar Chart](https://public.flourish.studio/visualisation/12826320/)
+  - [Interactive Choropleth Map](https://public.flourish.studio/visualisation/12889023/)
+    ![Environmental citation still](https://github.com/JMeltzer92/portfolio/blob/main/images/bmore_cit_map.png)
+  - [Interactive Scatterplot](https://public.flourish.studio/visualisation/12889093/)
+    ![Scatterplot still](https://github.com/JMeltzer92/portfolio/blob/main/images/bmore_cit_scatter.png)
+  - [Interactive Bar Chart](https://public.flourish.studio/visualisation/12889153/)
 
 **[Ethiopia's Forgotten Civil War](https://github.com/JMeltzer92/portfolio/blob/main/pdfs/eth_civ_war_graphics_package.pdf)** - _full resolution available at link_
 
@@ -33,8 +35,7 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 
 ![Example maps](https://github.com/JMeltzer92/portfolio/blob/main/images/map_inserts.png)
 
-**[Meet the people fleeing the United States
-](https://cnsmaryland.org/2023/02/22/meet-the-people-fleeing-the-united-states/)**
+**[Meet the people fleeing the United States](https://cnsmaryland.org/2023/02/22/meet-the-people-fleeing-the-united-states/)**
 
 - Capital News Service, _February 2023_ - **graphics only**
 - Tools: Datawrapper, R, Microsoft Excel
