@@ -16,13 +16,6 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - Independent project, _April-May 2022_
 - Tools: R Studio
 
-**[Foreign Reporting: The Lives of Our International Neighbors and the Struggles They Left Behind](https://github.com/JMeltzer92/portfolio/blob/main/images/map_graphics)**
-
-- Capital News Service, _December 2022_ - maps accompanying each story to center audience on the subject's country of origin
-- Tools: Datawrapper, Adobe Illustrator
-
-![Example maps](https://github.com/JMeltzer92/portfolio/blob/main/images/map_inserts.png)
-
 **[Meet the people fleeing the United States](https://cnsmaryland.org/2023/02/22/meet-the-people-fleeing-the-united-states/)**
 
 - Capital News Service, _February 2023_ - **graphics only**
@@ -43,9 +36,18 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
     ![Scatterplot still](https://github.com/JMeltzer92/portfolio/blob/main/images/bmore_cit_scatter.png)
   - [Interactive Bar Chart](https://public.flourish.studio/visualisation/12889153/)
 
+**[Foreign Reporting: The Lives of Our International Neighbors and the Struggles They Left Behind](https://github.com/JMeltzer92/portfolio/blob/main/images/map_graphics)**
+
+- Capital News Service, _December 2022_ - maps accompanying each story to center audience on the subject's country of origin - [Example maps](https://github.com/JMeltzer92/portfolio/blob/main/images/map_inserts.png)
+- Tools: Datawrapper, Adobe Illustrator
+
 ## Writing
 
 ### Features
+
+**[As peace declared at home, Ethiopians in Washington area deeply divided](https://cnsmaryland.org/2023/02/06/as-peace-declared-at-home-ethiopians-in-washington-area-deeply-divided/)**
+
+- Capital News Service, _September-December, 2022_
 
 **[Scientific Games’ lottery playbook succeeded, then spread](https://cnsmaryland.org/2022/07/01/scientific-games-lottery-playbook-succeeded-then-spread/)**
 
