@@ -2,7 +2,7 @@
 
 Welcome to my portfolio repository! Here, you will find examples of published work of which I'm particularly fond and some independent projects that showcase my skillset. You will also find references and a link to a full CV at the bottom. Thanks for looking around - I hope to work with you soon!
 
-## Data Visualization
+## Data Visualization & Design
 
 **[Ethiopia's Forgotten Civil War](https://github.com/JMeltzer92/portfolio/blob/main/pdfs/eth_civ_war_graphics_package.pdf)** - _full resolution available at link_
 
@@ -11,10 +11,23 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 
 ![Ethiopia graphics package](https://github.com/JMeltzer92/portfolio/blob/main/images/eth_graphpack1.png)
 
-**[Wartime violence analysis using ACLED data and R](https://github.com/JMeltzer92/portfolio/blob/main/notebooks/wartime_healthcare_violence.Rmd)**
+**[INTERACTIVE - Maryland's New Cannabis Laws and You](https://cnsmaryland.org/interactives/spring-2023/cannabis-cyoa/index.html)**
 
-- Independent project, _April-May 2022_
-- Tools: R Studio
+- Capital News Service, April 2023
+- Tools: JavaScript
+
+**[Black Marylanders most often targeted by hate crimes and bias incidents in 2021](https://cnsmaryland.org/2023/04/06/black-marylanders-most-often-targeted-by-hate-crimes-and-bias-incidents-in-2021/)**
+
+- Capital News Service, _April 2023_ - **reporting & graphics**
+- Tools: R, RawGraphs, Adobe Illustrator
+- Graphics:
+
+  - [Chloropleth Map X Stacked Bar Chart](https://github.com/JMeltzer92/portfolio/blob/main/images/div_vs_hate_crime_by_county.png)
+    ![Map preview](https://github.com/JMeltzer92/portfolio/blob/main/images/div_vs_hate_crime_by_county.png)
+  - [Interactive Connected Dot Plot](https://public.flourish.studio/visualisation/13255124/)
+    ![Connected dot plot preview](https://github.com/JMeltzer92/portfolio/blob/main/images/dot_plot_preview.png)
+  - [Pictogram](https://github.com/JMeltzer92/portfolio/blob/main/images/offenders_v_victims_v2.png)
+    ![Pictogram preview](https://github.com/JMeltzer92/portfolio/blob/main/images/offenders_v_victims_v2.png)
 
 **[Meet the people fleeing the United States](https://cnsmaryland.org/2023/02/22/meet-the-people-fleeing-the-united-states/)**
 
