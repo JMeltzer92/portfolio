@@ -14,7 +14,7 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 **[INTERACTIVE - Maryland's New Cannabis Laws and You](https://cnsmaryland.org/interactives/spring-2023/cannabis-cyoa/index.html)**
 
 - Capital News Service, April 2023
-- Tools: JavaScript
+- Tools: JavaScript - [repo here](https://github.com/JMeltzer92/cannabis-cyoa)
 
 **[Black Marylanders most often targeted by hate crimes and bias incidents in 2021](https://cnsmaryland.org/2023/04/06/black-marylanders-most-often-targeted-by-hate-crimes-and-bias-incidents-in-2021/)**
 
