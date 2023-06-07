@@ -56,7 +56,11 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 
 ## Writing
 
-### Features
+### Investigations, Enterprise & Features
+
+**[Hogan’s environment agency was underfunded and underperformed, experts say](https://cnsmaryland.org/2023/05/05/hogans-environment-agency-was-underfunded-and-underperformed-experts-say/)**
+
+- Capital News Service, _April 2022_ - reporting & graphics
 
 **[As peace declared at home, Ethiopians in Washington area deeply divided](https://cnsmaryland.org/2023/02/06/as-peace-declared-at-home-ethiopians-in-washington-area-deeply-divided/)**
 
@@ -74,7 +78,7 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 
 - The Afro, _May 7, 2022_
 
-### Politics
+### Election Coverage
 
 **[Two Democrats competing in rare open primary to become Maryland’s top accountant and tax collector](https://www.thebaltimorebanner.com/politics-power/state-government/two-democrats-competing-in-rare-open-primary-to-become-marylands-top-accountant-and-tax-collector-OVP2RKH44JF5HHO2XVO5VMHQBM/)**
 
