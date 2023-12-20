@@ -13,9 +13,11 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - Interactives:
 
   - [Scrollytelling Explainer](https://github.com/JMeltzer92/portfolio/blob/main/images/sea_scrolly_small.gif)
-    ![Scrolly preview](https://github.com/JMeltzer92/portfolio/blob/main/images/sea_scrolly_small.gif)
+ 
+![Scrolly preview](https://github.com/JMeltzer92/portfolio/blob/main/images/sea_scrolly_small.gif)
   - [Data Explorer](https://github.com/JMeltzer92/portfolio/blob/main/images/sea_data_explorer.png)
-    ![Explorer preview](https://github.com/JMeltzer92/portfolio/blob/main/images/sea_data_explorer.png)
+
+![Explorer preview](https://github.com/JMeltzer92/portfolio/blob/main/images/sea_data_explorer.png)
 
 **[EMILY’S List Ex-Head Now Serves With Senators She Aided, Opposed](https://news.bgov.com/bloomberg-government-news/at-emilys-list-butler-helped-hindered-new-senate-colleagues)**
 - Bloomberg Government, _October 2023_
@@ -29,9 +31,11 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - Interactives:
 
   - [Drought Choropleth Map](https://public.flourish.studio/visualisation/15474453/)
-    ![Map preview](https://github.com/JMeltzer92/portfolio/blob/main/images/drought-map.png)
+
+![Map preview](https://github.com/JMeltzer92/portfolio/blob/main/images/drought-map.png)
   - [Sortable Time Series](https://public.flourish.studio/visualisation/15523519/)
-    ![Series preview](https://github.com/JMeltzer92/portfolio/blob/main/images/drought-heatmap.png)
+
+![Series preview](https://github.com/JMeltzer92/portfolio/blob/main/images/drought-heatmap.png)
 
 **[Mining Accidents Lead to ‘Troubling’ 31% Jump in Worker Deaths](https://news.bloomberglaw.com/safety/mining-accidents-lead-to-troubling-31-jump-in-worker-deaths)**
 
@@ -40,9 +44,11 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - Interactives:
 
   - [Icon Map](https://public.flourish.studio/visualisation/15609659/)
-    ![Map preview](https://github.com/JMeltzer92/portfolio/blob/main/images/mine-map.png)
+
+![Map preview](https://github.com/JMeltzer92/portfolio/blob/main/images/mine-map.png)
   - [Sortable Line Graph](https://public.flourish.studio/visualisation/15651678/)
-    ![Graph preview](https://github.com/JMeltzer92/portfolio/blob/main/images/mine-line.png)
+
+![Graph preview](https://github.com/JMeltzer92/portfolio/blob/main/images/mine-line.png)
 
 
 **[Black Marylanders most often targeted by hate crimes and bias incidents in 2021](https://cnsmaryland.org/2023/04/06/black-marylanders-most-often-targeted-by-hate-crimes-and-bias-incidents-in-2021/)**
@@ -52,11 +58,14 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - Graphics:
 
   - [Chloropleth Map X Stacked Bar Chart](https://github.com/JMeltzer92/portfolio/blob/main/images/div_vs_hate_crime_by_county.png)
-    ![Map preview](https://github.com/JMeltzer92/portfolio/blob/main/images/div_vs_hate_crime_by_county.png)
+
+![Map preview](https://github.com/JMeltzer92/portfolio/blob/main/images/div_vs_hate_crime_by_county.png)
   - [Interactive Connected Dot Plot](https://public.flourish.studio/visualisation/13255124/)
-    ![Connected dot plot preview](https://github.com/JMeltzer92/portfolio/blob/main/images/hate_dot_plot.png)
+
+![Connected dot plot preview](https://github.com/JMeltzer92/portfolio/blob/main/images/hate_dot_plot.png)
   - [Pictogram](https://github.com/JMeltzer92/portfolio/blob/main/images/offenders_v_victims_v2.png)
-    ![Pictogram preview](https://github.com/JMeltzer92/portfolio/blob/main/images/offenders_v_victims_v2.png)
+
+![Pictogram preview](https://github.com/JMeltzer92/portfolio/blob/main/images/offenders_v_victims_v2.png)
 
 **[Meet the people fleeing the United States](https://cnsmaryland.org/2023/02/22/meet-the-people-fleeing-the-united-states/)**
 
