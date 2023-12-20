@@ -4,17 +4,46 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 
 ## Data Visualization & Design
 
-**[Ethiopia's Forgotten Civil War](https://github.com/JMeltzer92/portfolio/blob/main/pdfs/eth_civ_war_graphics_package.pdf)** - _full resolution available at link_
+**[Rising Seas Imperil US Sites, Military Bases Worth $387 Billion](https://news.bloomberglaw.com/environment-and-energy/rising-seas-imperil-us-sites-military-bases-worth-387-billion)**
 
-- Independent project, _November-December 2022_
-- Tools: RawGraphs, Illustrator, XD, InDesign, Python/pandas (for data acquisition and analysis) - [notebook here](https://github.com/JMeltzer92/portfolio/blob/main/notebooks/eth-ukr-inv_v2.ipynb)
+- Bloomberg Law, _August-September 2023_ - **reporting, analysis and graphics**
+- Tools: R, QGIS, JavaScript, Adobe AfterEffects, Adobe Illustrator
+- **Beltz Award Winner, Q3 2023**
+- **Focal point of my NICAR demo, March 9, 2024**
+- Interactives:
 
-![Ethiopia graphics package](https://github.com/JMeltzer92/portfolio/blob/main/images/eth_graphpack1.png)
+  - [Scrollytelling Explainer](https://github.com/JMeltzer92/portfolio/blob/main/images/sea_scrolly_small.gif)
+    ![Scrolly preview](https://github.com/JMeltzer92/portfolio/blob/main/images/sea_scrolly_small.gif)
+  - [Data Explorer](https://github.com/JMeltzer92/portfolio/blob/main/images/sea_data_explorer.png)
+    ![Explorer preview](https://github.com/JMeltzer92/portfolio/blob/main/images/sea_data_explorer.png)
 
-**[INTERACTIVE - Maryland's New Cannabis Laws and You](https://cnsmaryland.org/interactives/spring-2023/cannabis-cyoa/index.html)**
+**[EMILY’S List Ex-Head Now Serves With Senators She Aided, Opposed](https://news.bgov.com/bloomberg-government-news/at-emilys-list-butler-helped-hindered-new-senate-colleagues)**
+- Bloomberg Government, _October 2023_
+- Tools: R, Javascript (vue.js, d3.js)
 
-- Capital News Service, April 2023
-- Tools: JavaScript - [repo here](https://github.com/JMeltzer92/cannabis-cyoa)
+![Interactive bubble plot](https://news.bgov.com/bloomberg-government-news/at-emilys-list-butler-helped-hindered-new-senate-colleagues)
+
+**[Drought Crushes Texas Water Pipes With Massive Funding Need](https://news.bloomberglaw.com/environment-and-energy/drought-crushes-texas-water-systems-with-staggering-funding-need)**
+- Bloomberg Law, _October 2023_
+- Tools: R, Flourish
+- Interactives:
+
+  - [Drought Choropleth Map](https://public.flourish.studio/visualisation/15474453/)
+    ![Map preview](https://github.com/JMeltzer92/portfolio/blob/main/images/drought-map.png)
+  - [Sortable Time Series](https://public.flourish.studio/visualisation/15523519/)
+    ![Series preview](https://github.com/JMeltzer92/portfolio/blob/main/images/drought-heatmap.png)
+
+**[Mining Accidents Lead to ‘Troubling’ 31% Jump in Worker Deaths](https://news.bloomberglaw.com/safety/mining-accidents-lead-to-troubling-31-jump-in-worker-deaths)**
+
+- Bloomberg Law, _November 2023_
+- Tools: R, Flourish, Adobe Illustrator
+- Interactives:
+
+  - [Icon Map](https://public.flourish.studio/visualisation/15609659/)
+    ![Map preview](https://github.com/JMeltzer92/portfolio/blob/main/images/mine-map.png)
+  - [Sortable Line Graph](https://public.flourish.studio/visualisation/15651678/)
+    ![Graph preview](https://github.com/JMeltzer92/portfolio/blob/main/images/mine-line.png)
+
 
 **[Black Marylanders most often targeted by hate crimes and bias incidents in 2021](https://cnsmaryland.org/2023/04/06/black-marylanders-most-often-targeted-by-hate-crimes-and-bias-incidents-in-2021/)**
 
@@ -31,28 +60,18 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 
 **[Meet the people fleeing the United States](https://cnsmaryland.org/2023/02/22/meet-the-people-fleeing-the-united-states/)**
 
-- Capital News Service, _February 2023_ - **graphics only**
+- Capital News Service, _February 2023_
 - Tools: Datawrapper, R, Microsoft Excel
 - Graphics:
   - [Interactive Chorpleth Map]() - _embedded in story, direct link to come_
   - [Interactive Bar Chart](https://public.flourish.studio/visualisation/12823819/)
 
-**Environmental citations in Baltimore's vulnerable communities**
+**[Ethiopia's Forgotten Civil War](https://github.com/JMeltzer92/portfolio/blob/main/pdfs/eth_civ_war_graphics_package.pdf)** - _full resolution available at link_
 
-- Capital News Service, _February 2023, unpublished_
-- Tools: R, Flourish - [notebook here](https://github.com/JMeltzer92/portfolio/blob/main/notebooks/cit_data_v2.rmd)
-- Graphics:
+- Independent project, _November-December 2022_
+- Tools: RawGraphs, Illustrator, XD, InDesign, Python/pandas (for data acquisition and analysis) - [notebook here](https://github.com/JMeltzer92/portfolio/blob/main/notebooks/eth-ukr-inv_v2.ipynb)
 
-  - [Interactive Choropleth Map](https://public.flourish.studio/visualisation/12889023/)
-    ![Environmental citation still](https://github.com/JMeltzer92/portfolio/blob/main/images/bmore_cit_map.png)
-  - [Interactive Scatterplot](https://public.flourish.studio/visualisation/12889093/)
-    ![Scatterplot still](https://github.com/JMeltzer92/portfolio/blob/main/images/bmore_cit_scatter.png)
-  - [Interactive Bar Chart](https://public.flourish.studio/visualisation/12889153/)
-
-**[Foreign Reporting: The Lives of Our International Neighbors and the Struggles They Left Behind](https://github.com/JMeltzer92/portfolio/blob/main/images/map_graphics)**
-
-- Capital News Service, _December 2022_ - maps accompanying each story to center audience on the subject's country of origin - [Example maps](https://github.com/JMeltzer92/portfolio/blob/main/images/map_inserts.png)
-- Tools: Datawrapper, Adobe Illustrator
+![Ethiopia graphics package](https://github.com/JMeltzer92/portfolio/blob/main/images/eth_graphpack1.png)
 
 ## Writing
 
