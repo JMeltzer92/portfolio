@@ -21,7 +21,7 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - Bloomberg Government, _October 2023_
 - Tools: R, Javascript (vue.js, d3.js)
 
-![Interactive bubble plot](https://news.bgov.com/bloomberg-government-news/at-emilys-list-butler-helped-hindered-new-senate-colleagues)
+![Interactive bubble plot](https://github.com/JMeltzer92/portfolio/blob/main/images/butler_plot.png)
 
 **[Drought Crushes Texas Water Pipes With Massive Funding Need](https://news.bloomberglaw.com/environment-and-energy/drought-crushes-texas-water-systems-with-staggering-funding-need)**
 - Bloomberg Law, _October 2023_
