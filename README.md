@@ -12,11 +12,11 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - **Focal point of my NICAR demo, March 9, 2024**
 - Interactives:
 
-  - [Scrollytelling Explainer](https://github.com/JMeltzer92/portfolio/blob/main/images/sea_scrolly_small.gif)
+[Scrollytelling Explainer](https://github.com/JMeltzer92/portfolio/blob/main/images/sea_scrolly_small.gif)
  
 ![Scrolly preview](https://github.com/JMeltzer92/portfolio/blob/main/images/sea_scrolly_small.gif)
 
-    - [Data Explorer](https://github.com/JMeltzer92/portfolio/blob/main/images/sea_data_explorer.png)
+[Data Explorer](https://github.com/JMeltzer92/portfolio/blob/main/images/sea_data_explorer.png)
 
 ![Explorer preview](https://github.com/JMeltzer92/portfolio/blob/main/images/sea_data_explorer.png)
 
@@ -31,11 +31,11 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - Tools: R, Flourish
 - Interactives:
 
-  - [Drought Choropleth Map](https://public.flourish.studio/visualisation/15474453/)
+[Drought Choropleth Map](https://public.flourish.studio/visualisation/15474453/)
 
 ![Map preview](https://github.com/JMeltzer92/portfolio/blob/main/images/drought-map.png)
 
-    - [Sortable Time Series](https://public.flourish.studio/visualisation/15523519/)
+[Sortable Time Series](https://public.flourish.studio/visualisation/15523519/)
 
 ![Series preview](https://github.com/JMeltzer92/portfolio/blob/main/images/drought-heatmap.png)
 
@@ -45,11 +45,11 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - Tools: R, Flourish, Adobe Illustrator
 - Interactives:
 
-  - [Icon Map](https://public.flourish.studio/visualisation/15609659/)
+[Icon Map](https://public.flourish.studio/visualisation/15609659/)
 
 ![Map preview](https://github.com/JMeltzer92/portfolio/blob/main/images/mine-map.png)
 
-    - [Sortable Line Graph](https://public.flourish.studio/visualisation/15651678/)
+[Sortable Line Graph](https://public.flourish.studio/visualisation/15651678/)
 
 ![Graph preview](https://github.com/JMeltzer92/portfolio/blob/main/images/mine-line.png)
 
@@ -60,15 +60,15 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - Tools: R, RawGraphs, Adobe Illustrator
 - Graphics:
 
-  - [Chloropleth Map X Stacked Bar Chart](https://github.com/JMeltzer92/portfolio/blob/main/images/div_vs_hate_crime_by_county.png)
+[Chloropleth Map X Stacked Bar Chart](https://github.com/JMeltzer92/portfolio/blob/main/images/div_vs_hate_crime_by_county.png)
 
 ![Map preview](https://github.com/JMeltzer92/portfolio/blob/main/images/div_vs_hate_crime_by_county.png)
   
-    - [Interactive Connected Dot Plot](https://public.flourish.studio/visualisation/13255124/)
+[Interactive Connected Dot Plot](https://public.flourish.studio/visualisation/13255124/)
 
 ![Connected dot plot preview](https://github.com/JMeltzer92/portfolio/blob/main/images/hate_dot_plot.png)
   
-    - [Pictogram](https://github.com/JMeltzer92/portfolio/blob/main/images/offenders_v_victims_v2.png)
+[Pictogram](https://github.com/JMeltzer92/portfolio/blob/main/images/offenders_v_victims_v2.png)
 
 ![Pictogram preview](https://github.com/JMeltzer92/portfolio/blob/main/images/offenders_v_victims_v2.png)
 
