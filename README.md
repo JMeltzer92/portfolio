@@ -1,8 +1,42 @@
 # Jon Meltzer's Portfolio
 
-Welcome to my portfolio repository! Here, you will find examples of published work of which I'm particularly fond and some independent projects that showcase my skillset. You will also find references and a link to a full CV at the bottom. Thanks for looking around - I hope to work with you soon!
+Welcome to my portfolio repository! Here, you will find examples of published work of which I'm particularly fond, as well as some independent projects that showcase my skillset.
 
-## Data Visualization & Design
+You will also find references and a link to a full CV at the bottom. Thanks for looking around - I hope to work with you soon!
+
+## Data Visualization & Interactive Design
+
+**[The Great American EV Road Trip Will Have to Wait—for Chargers](https://news.bgov.com/bloomberg-government-news/the-great-american-ev-road-trip-will-have-to-wait-for-chargers)**
+- Bloomberg Government, _September-October 2024_ - **data analysis and visualization**
+- Tools: Javascript, Adobe After Effects, Adobe Illustrator, QGIS, Flourish
+
+[Interactive Photo Explorer](https://github.com/JMeltzer92/portfolio/blob/main/images/ev-roadtrip-scrolly.png)
+
+![Interactive Photo Explorer](https://github.com/JMeltzer92/portfolio/blob/main/images/ev-roadtrip-scrolly.png)
+
+[Interactive Choropleth Map](https://public.flourish.studio/visualisation/19532427/)
+
+![Interactive Choropleth Map](https://github.com/JMeltzer92/portfolio/blob/main/images/ev-roadtrip-map.png)
+
+**[Sex, Secrets Trigger Downfall of Star Texas Bankruptcy Judge](https://news.bloomberglaw.com/bankruptcy-law/sex-and-secrets-trigger-downfall-of-star-texas-bankruptcy-judge)**
+- Bloomberg Law, _April-May 2024_ - **interactive design**
+- Tools: Javascript, Adobe Photoshop, Flourish
+
+[Interactive Photo Explorer](https://github.com/JMeltzer92/portfolio/blob/main/images/meatfest.png)
+
+![Interactive Photo Explorer](https://github.com/JMeltzer92/portfolio/blob/main/images/meatfest.png)
+
+[Animated Bar Chart Race](https://public.flourish.studio/visualisation/17619862/)
+
+![Animation preview](https://github.com/JMeltzer92/portfolio/blob/main/images/meatfest-race.png)
+
+**[Senators Eyeing McConnell's Post Have Spent Millions Networking](https://news.bgov.com/bloomberg-government-news/potential-mcconnell-successors-spent-millions-helping-colleagues)**
+- Bloomberg Government, _January-February 2024_ - **data analysis and visualization**
+- Tools: R, Javascript
+
+[Interactive Network Map](https://github.com/JMeltzer92/portfolio/blob/main/images/three-johns.png)
+
+![Network map preview](https://github.com/JMeltzer92/portfolio/blob/main/images/three-johns.png)
 
 **[Rising Seas Imperil US Sites, Military Bases Worth $387 Billion](https://news.bloomberglaw.com/environment-and-energy/rising-seas-imperil-us-sites-military-bases-worth-387-billion)**
 
@@ -78,7 +112,7 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - Tools: Datawrapper, R, Microsoft Excel
 - Graphics:
   - [Interactive Chorpleth Map]() - _embedded in story, direct link to come_
-  - [Interactive Bar Chart](https://public.flourish.studio/visualisation/12823819/)
+  - [Interactive Bar Chart](https://public.flourish.studio/visualisation/17619862/)
 
 **[Ethiopia's Forgotten Civil War](https://github.com/JMeltzer92/portfolio/blob/main/pdfs/eth_civ_war_graphics_package.pdf)** - _full resolution available at link_
 
@@ -140,6 +174,11 @@ Welcome to my portfolio repository! Here, you will find examples of published wo
 - The Hyattsville Life & Times, _June-July 2022_
 
 ## References
+
+#### Andrew Wallender
+- Data Editor, Bloomberg Industry Group
+  - awallender@bloombergindustry.com
+  - (310) 616-6240
 
 #### Adam Marton
 
