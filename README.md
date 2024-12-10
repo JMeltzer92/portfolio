@@ -10,13 +10,13 @@ You will also find references and a link to a full CV at the bottom. Thanks for 
 - Bloomberg Government, _September-October 2024_ - **data analysis and visualization**
 - Tools: Javascript, Adobe After Effects, Adobe Illustrator, QGIS, Flourish
 
-[Interactive Photo Explorer](https://github.com/JMeltzer92/portfolio/blob/main/images/ev-roadtrip-scrolly.png)
+[Scrollyltelling Animation](https://github.com/JMeltzer92/portfolio/blob/main/images/ev-roadtrip-scrolly.png)
 
-![Interactive Photo Explorer](https://github.com/JMeltzer92/portfolio/blob/main/images/ev-roadtrip-scrolly.png)
+![scrolly preview](https://github.com/JMeltzer92/portfolio/blob/main/images/ev-roadtrip-scrolly.png)
 
 [Interactive Choropleth Map](https://public.flourish.studio/visualisation/19532427/)
 
-![Interactive Choropleth Map](https://github.com/JMeltzer92/portfolio/blob/main/images/ev-roadtrip-map.png)
+![map preview](https://github.com/JMeltzer92/portfolio/blob/main/images/ev-roadtrip-map.png)
 
 **[Sex, Secrets Trigger Downfall of Star Texas Bankruptcy Judge](https://news.bloomberglaw.com/bankruptcy-law/sex-and-secrets-trigger-downfall-of-star-texas-bankruptcy-judge)**
 - Bloomberg Law, _April-May 2024_ - **interactive design**
