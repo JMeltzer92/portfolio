@@ -6,6 +6,30 @@ You will also find references and a link to a full CV at the bottom. Thanks for 
 
 ## Data Visualization & Interactive Design
 
+**[Tracking Trump in Court: The Scope of Executive Power Tested](https://news.bloomberglaw.com/litigation/tracking-trump-in-court-the-scope-of-executive-power-tested-1)**
+- Bloomberg Law, _February 2025-present_ - **data collection and validation, visualization development, continuous updates**
+- Tools: Google sheets, Javascript, R
+
+[Litigation Tracker](https://news.bloomberglaw.com/litigation/tracking-trump-in-court-the-scope-of-executive-power-tested-1)
+
+![tracker preview](https://github.com/JMeltzer92/portfolio/blob/main/images/tracker-screenshot.png)
+
+**[Voting Rights Claims Plunge in Wake of Supreme Court Decision](https://news.bloomberglaw.com/litigation/voting-rights-claims-plunge-in-wake-of-supreme-court-decision)**
+- Bloomberg Law, _November 2024-February 2025_ - **data analysis, reporting, and visualization**
+- Tools: Javascript, Adobe Illustrator/Premiere/After Effects, Flourish
+
+[Scrollytelling Animation](https://github.com/JMeltzer92/portfolio/blob/main/images/brnovich-screenshot-1.png)
+
+![scrolly preview](https://github.com/JMeltzer92/portfolio/blob/main/images/brnovich-screenshot-1.png)
+
+[Slope Chart](https://public.flourish.studio/visualisation/21338382/)
+
+![slope preview](https://github.com/JMeltzer92/portfolio/blob/main/images/brnovich-screenshot-2.png)
+
+[Filterable Line Chart](https://public.flourish.studio/visualisation/21304630/)
+
+![line preview](https://github.com/JMeltzer92/portfolio/blob/main/images/brnovich-screenshot-3.png)
+
 **[The Great American EV Road Trip Will Have to Wait—for Chargers](https://news.bgov.com/bloomberg-government-news/the-great-american-ev-road-trip-will-have-to-wait-for-chargers)**
 - Bloomberg Government, _September-October 2024_ - **data analysis and visualization**
 - Tools: Javascript, Adobe After Effects, Adobe Illustrator, QGIS, Flourish
